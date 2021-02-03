@@ -1,5 +1,5 @@
 {
-  "name": "ts-greeting-component",
+  "name": "@lalosh/ts-greeting-component",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
