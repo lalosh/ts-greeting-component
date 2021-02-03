@@ -7,8 +7,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "./scripts/build.sh",
-    "prepublish": "./scripts/prepublish.sh"
+    "build": "./scripts/build.sh"
   },
   "repository": {
     "type": "git",
