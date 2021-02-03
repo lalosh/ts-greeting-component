@@ -1,3 +1,3 @@
-import { GreetPerson, SearchPerson } from './greeting';
-export { SearchPerson };
+import { GreetPerson, SearchPerson, TestImage } from './greeting';
+export { SearchPerson, TestImage };
 export default GreetPerson;

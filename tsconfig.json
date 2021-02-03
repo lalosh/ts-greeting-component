@@ -11,6 +11,6 @@
             "ES5"
         ],
         "allowJs": true,
-        "esModuleInterop": true
-    }
+        "esModuleInterop": true,
+    },
 }

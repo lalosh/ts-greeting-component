@@ -1,5 +1,7 @@
 import { Configuration } from "webpack";
 import * as path from 'path';
+// import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+
 
 
 const config: Configuration = {
@@ -9,8 +11,13 @@ const config: Configuration = {
         filename: 'index.js',
         path: path.join(__dirname, './dist'),
         libraryTarget: 'umd',
-        library: 'GreetingLibrary'
+        library: 'GreetingLibrary',
+        publicPath: path.join(__dirname, './dist/'),
+        umdNamedDefine: true,
     },
+    plugins: [
+        // new MiniCssExtractPlugin()
+    ],
     module: {
         rules: [
             {
@@ -25,10 +32,35 @@ const config: Configuration = {
                 include: path.join(__dirname, './src'),
                 exclude: /node_modules/
             },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    // extract css into separate files
+                    // {
+                    //     loader: MiniCssExtractPlugin.loader,
+                    //     options: {
+                    //         esModule: false,
+                    //     }
+                    // },
+                    'css-loader'
+                ],
+                include: path.join(__dirname, './src'),
+                exclude: /node_modules/
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                type: 'asset/resource',
+                
+            },
         ]
     },
     resolve: {
         extensions: ['.ts', '.tsx'],
+        alias: {
+            'react': path.resolve(__dirname, './node_modules/react'),
+            'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
+        },
     },
     externals: {
         react: {

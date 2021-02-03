@@ -3,8 +3,12 @@
   "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "build": "./scripts/build.sh"
+    "build": "./scripts/build.sh",
+    "prepublish": "./scripts/prepublish.sh"
   },
   "repository": {
     "type": "git",
@@ -23,24 +27,26 @@
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.12.13",
     "@lableb/javascript-sdk": "^2.0.0-beta",
+    "@types/mini-css-extract-plugin": "^1.2.2",
     "@types/node": "^14.14.22",
     "@types/react": "^17.0.1",
     "@types/webpack": "^4.41.26",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^1.3.5",
     "style-loader": "^2.0.0",
     "ts-jest": "^26.5.0",
     "ts-loader": "^8.0.14",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3",
+    "url-loader": "^4.1.1",
     "webpack": "^5.20.0",
     "webpack-cli": "^4.5.0"
   },
   "peerDependencies": {
+    "@lableb/javascript-sdk": "^2.0.0-beta",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "@lableb/javascript-sdk": "^2.0.0-beta"
+    "react-dom": "^17.0.1"
   }
 }
