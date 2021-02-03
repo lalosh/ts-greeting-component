@@ -44,8 +44,10 @@
     "webpack-cli": "^4.5.0"
   },
   "peerDependencies": {
-    "@lableb/javascript-sdk": "^2.0.0-beta",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
+  },
+  "dependencies": {
+    "@lableb/javascript-sdk": "^2.0.0-beta"
   }
 }
